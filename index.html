@@ -5,12 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>D&D 5e — Compêndio</title>
 
+  <!-- Bootstrap 5 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <!-- Google Fonts: MedievalSharp + Crimson Text -->
   <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="css/style.css"/>
 </head>
 <body>
 
+  <!-- Header -->
   <header class="site-header text-center py-5">
     <div class="header-ornament">✦ ✦ ✦</div>
     <h1 class="site-title">Compêndio de D&D 5e</h1>
@@ -18,6 +21,7 @@
     <div class="header-ornament">✦ ✦ ✦</div>
   </header>
 
+  <!-- Navegação por abas -->
   <nav class="tab-nav container-fluid px-0">
     <div class="tab-nav-inner d-flex justify-content-center flex-wrap">
       <button class="tab-btn active" data-category="monsters">
@@ -32,11 +36,34 @@
       <button class="tab-btn" data-category="equipment">
         <span class="tab-icon">🛡️</span> Equipamentos
       </button>
+      <button class="tab-btn tab-btn-favorites" data-category="favorites">
+        <span class="tab-icon">⭐</span> Favoritos
+        <span id="fav-count" class="fav-count d-none">0</span>
+      </button>
     </div>
   </nav>
 
+  <!-- Barra de pesquisa -->
+  <div class="search-bar-wrapper" id="search-wrapper">
+    <div class="search-inner container">
+      <div class="search-box">
+        <span class="search-icon">🔍</span>
+        <input
+          type="text"
+          id="search-input"
+          class="search-input"
+          placeholder="Pesquisar na lista carregada..."
+          autocomplete="off"
+        />
+        <button id="search-clear" class="search-clear d-none" title="Limpar">✕</button>
+      </div>
+      <p id="search-result-count" class="search-result-count"></p>
+    </div>
+  </div>
+
   <main class="container my-5">
 
+    <!-- Feedback de carregamento -->
     <div id="loading" class="text-center my-5 d-none">
       <div class="scroll-loader">
         <div class="scroll-spinner"></div>
@@ -44,16 +71,19 @@
       </div>
     </div>
 
+    <!-- Mensagem de erro -->
     <div id="error" class="alert-scroll d-none text-center my-4">
       ⚠️ Os pergaminhos não puderam ser lidos. Tente novamente mais tarde.
     </div>
 
+    <!-- Título da seção atual -->
     <div class="section-header text-center mb-4">
       <h2 id="section-title" class="section-title">Bestiário</h2>
       <div class="section-divider">⸻ ✦ ⸻</div>
       <p id="section-count" class="section-count"></p>
     </div>
 
+    <!-- Grid de cards -->
     <div id="card-container" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4"></div>
 
   </main>

@@ -1,0 +1,281 @@
+/* ===========================
+   BOTÃO VOLTAR
+=========================== */
+.btn-voltar {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: transparent;
+  border: 1px solid var(--stone);
+  color: var(--parchment-deep);
+  font-family: 'Crimson Text', serif;
+  font-size: 1rem;
+  padding: 0.4rem 1rem;
+  border-radius: 3px;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.btn-voltar:hover {
+  border-color: var(--gold);
+  color: var(--gold-light);
+  background: rgba(200, 150, 12, 0.08);
+}
+
+/* ===========================
+   CABEÇALHO DO ITEM
+=========================== */
+.detalhe-header {
+  background: linear-gradient(135deg, #1f1208, #2a1a0a);
+  border: 1px solid var(--stone-dark);
+  border-top: 3px solid var(--gold);
+  border-radius: 4px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.detalhe-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c8960c' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+.detalhe-icone {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.detalhe-nome {
+  font-family: 'MedievalSharp', serif;
+  color: var(--gold-light);
+  font-size: clamp(1.6rem, 4vw, 2.8rem);
+  text-shadow: 0 0 20px rgba(200,150,12,0.3);
+  margin: 0.2rem 0 0.8rem;
+}
+
+.detalhe-index {
+  font-size: 0.85rem;
+  color: var(--stone);
+  font-style: italic;
+  letter-spacing: 0.05em;
+}
+
+/* ===========================
+   SEÇÕES DE DETALHES
+=========================== */
+.detalhe-section {
+  background: linear-gradient(160deg, var(--parchment) 0%, var(--parchment-dark) 100%);
+  border: 1px solid var(--parchment-deep);
+  border-radius: 4px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 15px var(--shadow);
+  color: var(--ink);
+  position: relative;
+}
+
+.detalhe-section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+.detalhe-section-title {
+  font-family: 'MedievalSharp', serif;
+  font-size: 1.1rem;
+  color: var(--ink-light);
+  border-bottom: 1px solid var(--parchment-deep);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  letter-spacing: 0.03em;
+}
+
+/* ===========================
+   GRADE DE ATRIBUTOS
+=========================== */
+.atributos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 0.8rem;
+}
+
+.atributo-item {
+  background: rgba(107, 90, 62, 0.1);
+  border: 1px solid var(--parchment-deep);
+  border-radius: 3px;
+  padding: 0.6rem 0.9rem;
+}
+
+.atributo-label {
+  font-size: 0.72rem;
+  color: var(--stone);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.atributo-valor {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--ink);
+  text-transform: capitalize;
+}
+
+/* ===========================
+   STATS (D&D específico)
+=========================== */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0.6rem;
+  text-align: center;
+}
+
+@media (max-width: 576px) {
+  .stats-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+.stat-box {
+  background: linear-gradient(180deg, var(--stone-dark), var(--ink));
+  border: 1px solid rgba(200,150,12,0.25);
+  border-radius: 4px;
+  padding: 0.7rem 0.3rem;
+}
+
+.stat-name {
+  font-size: 0.65rem;
+  color: var(--parchment-deep);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  display: block;
+}
+
+.stat-value {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--gold-light);
+  display: block;
+  line-height: 1.2;
+}
+
+.stat-modifier {
+  font-size: 0.75rem;
+  color: var(--parchment-deep);
+  display: block;
+}
+
+/* ===========================
+   LISTA DE ITENS
+=========================== */
+.detalhe-lista {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.detalhe-lista li {
+  background: linear-gradient(135deg, var(--stone-dark), var(--ink));
+  color: var(--parchment-deep);
+  font-size: 0.85rem;
+  padding: 0.25rem 0.7rem;
+  border-radius: 2px;
+  border: 1px solid rgba(200,150,12,0.2);
+}
+
+/* ===========================
+   DESCRIÇÃO / TEXTO LONGO
+=========================== */
+.detalhe-desc {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--ink);
+  font-style: italic;
+}
+
+.detalhe-desc p { margin-bottom: 0.6rem; }
+.detalhe-desc p:last-child { margin-bottom: 0; }
+
+/* ===========================
+   AÇÕES DE MONSTRO
+=========================== */
+.acao-item {
+  border-bottom: 1px dashed var(--parchment-deep);
+  padding: 0.8rem 0;
+}
+
+.acao-item:last-child { border-bottom: none; }
+
+.acao-nome {
+  font-family: 'MedievalSharp', serif;
+  font-size: 0.95rem;
+  color: var(--ink-light);
+  margin-bottom: 0.3rem;
+}
+
+.acao-desc {
+  font-size: 0.9rem;
+  color: var(--ink);
+  line-height: 1.5;
+}
+
+/* ===========================
+   BOTÃO FAVORITAR (detalhe)
+=========================== */
+.btn-fav-detalhe {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: transparent;
+  border: 1px solid var(--stone);
+  color: var(--parchment-deep);
+  font-family: 'Crimson Text', serif;
+  font-size: 1rem;
+  padding: 0.5rem 1.2rem;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+  margin-top: 0.5rem;
+}
+
+.btn-fav-detalhe:hover {
+  border-color: var(--gold);
+  color: var(--gold-light);
+  background: rgba(200, 150, 12, 0.08);
+}
+
+.btn-fav-detalhe.fav-ativo {
+  border-color: var(--gold);
+  color: var(--gold-light);
+  background: rgba(200, 150, 12, 0.15);
+}
+
+/* ===========================
+   IMAGEM DO DETALHE (Wikipedia)
+=========================== */
+.detalhe-img-wrapper {
+  margin-top: 1.5rem;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid rgba(200, 150, 12, 0.3);
+  max-height: 320px;
+}
+
+.detalhe-img {
+  width: 100%;
+  max-height: 320px;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
