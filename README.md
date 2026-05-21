@@ -31,7 +31,7 @@ Aplicação web que consome a [D&D 5e API](https://www.dnd5eapi.co) para exibir 
 
 ## Estrutura
 ```
-av1-dwb-nome-sobrenome-2bimestre/
+giapi/
 ├── index.html
 ├── detalhes.html
 ├── css/
